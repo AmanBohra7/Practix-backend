@@ -3,7 +3,7 @@ const UserExp = require('./UserExp');
 const mongoose = require('mongoose');
 
 // const uri = 'mongodb://localhost:27017/practix';
-const uri = 'mongodb+srv://sanmati_labs:OzaEKnOP197ujI5H@cluster0.lqws3.mongodb.net/Cluster0?retryWrites=true&w=majority'
+const uri = process.env.ATLAS_URI
 
 const Connection = mongoose.connect(uri,{useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true,useFindAndModify:false}).then( () => {
     console.log('Connected to database ')
