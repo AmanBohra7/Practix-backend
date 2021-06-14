@@ -1,6 +1,8 @@
 const User = require('./User');
 const UserExp = require('./UserExp');
 const mongoose = require('mongoose');
+const dotenv = require('dotenv').config();
+
 
 // const uri = 'mongodb://localhost:27017/practix';
 const uri = process.env.ATLAS_URI
