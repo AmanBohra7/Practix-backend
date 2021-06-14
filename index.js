@@ -10,7 +10,7 @@ app.use(cors())
 app.use(express.json())
 
 // testing
-app.post('/test',(req,res) => {
+app.get('/test',(req,res) => {
     res.status(200).json({"message":"You are ready to go!"});
 })
 
