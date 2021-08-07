@@ -13,7 +13,7 @@ app.use(express.json())
 
 app.get('/getbundle',(req,res) => {
     console.log('called....!');
-    res.download('cubeasset');
+    res.download('testasset-Android');
 })
 
 // testing
