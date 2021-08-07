@@ -3,13 +3,18 @@ const express = require('express');
 const {Model} = require('./Models/index');
 const dotenv = require('dotenv').config();
 
-
 const app = express();
 
 const PORT = process.env.PORT || 5001;
 
 app.use(cors())
 app.use(express.json())
+
+
+app.get('/getbundle',(req,res) => {
+    console.log('called....!');
+    res.download('cubeasset');
+})
 
 // testing
 app.get('/test',(req,res) => {
