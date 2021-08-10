@@ -2,6 +2,7 @@ const cors = require('cors')
 const express = require('express');
 const {Model} = require('./Models/index');
 const dotenv = require('dotenv').config();
+var dateTime = require('node-datetime');
 
 const app = express();
 
@@ -10,10 +11,16 @@ const PORT = process.env.PORT || 5001;
 app.use(cors())
 app.use(express.json())
 
+var dt = dateTime.create();
+dt.format('m/d/Y H:M:S');
 
 app.get('/getbundle',(req,res) => {
-    console.log('called....!');
-    res.download('testasset-Android');
+    var dateStr = new Date(dt.now())
+    var fileName = 'machinebundle01-Android';
+    console.log(req.query)
+    console.log(req.params)
+    console.log(`"Called for assets for ${fileName} at ${dateStr}`);
+    res.download(fileName);
 })
 
 // testing
