@@ -14,14 +14,44 @@ app.use(express.json())
 var dt = dateTime.create();
 dt.format('m/d/Y H:M:S');
 
-app.get('/getbundle',(req,res) => {
+//#region bundles
+app.get('/getbundle/rockwellbundle',(req,res) => {
     var dateStr = new Date(dt.now())
-    var fileName = 'machinebundle01-Android';
-    console.log(req.query)
-    console.log(req.params)
+    var fileName = 'rockwellbundle';
     console.log(`"Called for assets for ${fileName} at ${dateStr}`);
     res.download(fileName);
 })
+
+app.get('/getbundle/torsionbundle',(req,res) => {
+    var dateStr = new Date(dt.now())
+    var fileName = 'torsionbundle';
+    console.log(`"Called for assets for ${fileName} at ${dateStr}`);
+    res.download(fileName);
+})
+
+app.get('/getbundle/utmbundle',(req,res) => {
+    var dateStr = new Date(dt.now())
+    var fileName = 'utmbundle';
+    console.log(`"Called for assets for ${fileName} at ${dateStr}`);
+    res.download(fileName);
+})
+
+app.get('/getbundle/brinelbundle',(req,res) => {
+    var dateStr = new Date(dt.now())
+    var fileName = 'brinelbundle';
+    console.log(`"Called for assets for ${fileName} at ${dateStr}`);
+    res.download(fileName);
+})
+
+app.get('/getbundle/itmbundle',(req,res) => {
+    var dateStr = new Date(dt.now())
+    var fileName = 'itmbundle';
+    console.log(`"Called for assets for ${fileName} at ${dateStr}`);
+    res.download(fileName);
+})
+//#endregion
+
+
 
 // testing
 app.get('/test',(req,res) => {
