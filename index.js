@@ -15,6 +15,14 @@ var dt = dateTime.create();
 dt.format('m/d/Y H:M:S');
 
 //#region bundles
+
+app.get('/getbundle/assetbundles',(req,res) => {
+    var dateStr = new Date(dt.now())
+    var fileName = 'AssetBundles';
+    console.log(`"Called for assets for ${fileName} at ${dateStr}`);
+    res.download(fileName);
+})
+
 app.get('/getbundle/rockwellbundle',(req,res) => {
     var dateStr = new Date(dt.now())
     var fileName = 'rockwellbundle';
