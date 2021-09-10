@@ -57,6 +57,23 @@ app.get('/getbundle/itmbundle',(req,res) => {
     console.log(`"Called for assets for ${fileName} at ${dateStr}`);
     res.download(fileName);
 })
+
+
+app.get('/getbundle/stmbundle',(req,res) => {
+    var dateStr = new Date(dt.now())
+    var fileName = 'stmbundle';
+    console.log(`"Called for assets for ${fileName} at ${dateStr}`);
+    res.download(fileName);
+})
+
+// TESTING
+app.get('/getbundle/:id' , (req,res) => {
+    console.log(req.params.id);
+    res.status(200).json({"message":"yess"});
+})
+
+
+
 //#endregion
 
 
