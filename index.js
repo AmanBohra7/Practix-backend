@@ -44,9 +44,9 @@ app.get('/getbundle/utmbundle',(req,res) => {
     res.download(fileName);
 })
 
-app.get('/getbundle/brinelbundle',(req,res) => {
+app.get('/getbundle/brinellbundle',(req,res) => {
     var dateStr = new Date(dt.now())
-    var fileName = 'brinelbundle';
+    var fileName = 'brinellbundle';
     console.log(`"Called for assets for ${fileName} at ${dateStr}`);
     res.download(fileName);
 })
